@@ -72,7 +72,7 @@ export const fetchMovie = id => async dispatch => {
 
   dispatch({
     type: FETCH_MOVIE,
-    payload: response.data
+    payload: response.data.results
   });
 };
 
@@ -83,7 +83,6 @@ export const fetchMoviesByGenre = genreId => async dispatch => {
       with_genres: genreId
     }
   });
-  console.log(response.data.results);
   dispatch({
     type: FETCH_MOVIES_BY_GENRE,
     payload: response.data.results

@@ -10,7 +10,6 @@ const ReduxBurgerMenu = reduxBurgerMenu(Menu);
 const Sidebar = props => {
   const selectGenre = (e, genreId) => {
     e.preventDefault();
-    console.log(e);
     props.fetchMoviesByGenre(genreId);
   };
 
