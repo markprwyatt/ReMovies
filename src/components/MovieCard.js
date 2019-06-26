@@ -1,11 +1,11 @@
 import React from "react";
-import { fetchMovie } from "../actions/index";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-const MovieCard = ({ movie, baseURL, fetchMovie }) => {
+const MovieCard = ({ movie, baseURL }) => {
   if (movie) {
     return (
-      <div className="card">
+      <Link to={`/movie/${movie.id}`} className="card">
         <div className="image">
           <img
             src={`${baseURL.images.base_url}/w500${movie.poster_path}`}
@@ -13,18 +13,18 @@ const MovieCard = ({ movie, baseURL, fetchMovie }) => {
           />
         </div>
         <div className="content">
-          <a href="/" className="header">
+          <div href="/" className="header">
             {movie.title}
-          </a>
+          </div>
           <div className="description">{movie.overview}</div>
         </div>
         <div className="extra content">
-          <a href="/">
+          <div href="/">
             <i className="star icon" />
             {movie.vote_average}
-          </a>
+          </div>
         </div>
-      </div>
+      </Link>
     );
   }
 };
@@ -37,7 +37,5 @@ const mapStateToProps = ({ movies }) => {
 
 export default connect(
   mapStateToProps,
-  {
-    fetchMovie
-  }
+  {}
 )(MovieCard);

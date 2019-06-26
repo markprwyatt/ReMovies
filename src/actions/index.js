@@ -7,7 +7,8 @@ import {
   GET_GENRES,
   SET_LOADING,
   REMOVE_LOADING,
-  FETCH_MOVIES_BY_GENRE
+  FETCH_MOVIES_BY_GENRE,
+  CLEAR_MOVIE
 } from "./types";
 
 const api_key = "?api_key=a2986eaf427243d1e89aafc1fc124089";
@@ -34,6 +35,7 @@ export const getGenres = () => async dispatch => {
 
 // init app
 export const init = () => async dispatch => {
+  console.log('init')
   dispatch({ type: SET_LOADING });
   await dispatch(getConfig());
   await dispatch(getGenres());
@@ -67,17 +69,21 @@ export const fetchMovies = query => async dispatch => {
   }
 };
 
-export const fetchMovie = id => async dispatch => {
-  const response = await movies.get(`/movie/${id}` + api_key);
+// fetch movie by id for movie view page
 
+export const fetchMovie = id => async dispatch => {
+  console.log('getting movie')
+  const response = await movies.get(`/movie/${id}` + api_key);
   dispatch({
     type: FETCH_MOVIE,
-    payload: response.data.results
+    payload: response.data
   });
 };
 
+// Search movies by genre ID
+
 export const fetchMoviesByGenre = genreId => async dispatch => {
-  console.log("got here");
+  
   const response = await movies.get("/discover/movie" + api_key, {
     params: {
       with_genres: genreId
@@ -88,3 +94,11 @@ export const fetchMoviesByGenre = genreId => async dispatch => {
     payload: response.data.results
   });
 };
+
+// clear movie for ffresh page
+
+export const clearMovie = () => {
+  return {
+    type: CLEAR_MOVIE
+  }
+}

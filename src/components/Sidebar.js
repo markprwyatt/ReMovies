@@ -4,28 +4,28 @@ import { slide as Menu } from "react-burger-menu";
 import { decorator as reduxBurgerMenu } from "redux-burger-menu";
 import { connect } from "react-redux";
 import { fetchMoviesByGenre } from "../actions/index";
+import { Link } from 'react-router-dom';
 
 const ReduxBurgerMenu = reduxBurgerMenu(Menu);
 
 const Sidebar = props => {
   const selectGenre = (e, genreId) => {
-    e.preventDefault();
     props.fetchMoviesByGenre(genreId);
+    console.log('Worked')
   };
+
+  //
 
   if (props.genres) {
     return (
       <ReduxBurgerMenu isOpen={props.isOpen} className="sidebar">
         {props.genres.map(genre => {
           return (
-            <a
-              id="home"
+            <Link to='/genres'
               className="menu-item"
-              key={genre.id}
-              href="/"
-              onClick={e => selectGenre(e, genre.id)}>
+              key={genre.id}>
               {genre.name}
-            </a>
+            </ Link>
           );
         })}
       </ReduxBurgerMenu>
