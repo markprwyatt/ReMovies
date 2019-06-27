@@ -14,7 +14,10 @@ class Searchbar extends React.Component {
   render() {
     return (
       <div className="search-form">
-        <form className="ui icon input" onSubmit={this.onSearchSubmit}>
+        <form
+          className="ui icon input"
+          style={{ margin: "1rem 2rem" }}
+          onSubmit={this.onSearchSubmit}>
           <input
             type="text"
             name="movie"

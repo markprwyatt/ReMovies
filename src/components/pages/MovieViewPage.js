@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { fetchMovie, init, clearMovie } from "../../actions/index";
+import { fetchMovie, init, clearMovie, getCredits } from "../../actions/index";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
@@ -49,14 +49,21 @@ const Image = styled.img`
   box-shadow: 0 1rem 2rem black;
 `;
 
-const MovieViewPage = ({ config, fetchMovie, init, history, match, movie }) => {
+const MovieViewPage = ({
+  config,
+  fetchMovie,
+  init,
+  getCredits,
+  history,
+  match,
+  movie
+}) => {
   useEffect(() => {
     clearMovie();
     init();
     fetchMovie(match.params.id);
+    getCredits(match.params.id);
   }, [match.params.id]);
-
-  console.log(movie);
 
   if (config.base && movie.title) {
     return (
@@ -101,5 +108,5 @@ const mapStateToProps = ({ movie, config }) => {
 
 export default connect(
   mapStateToProps,
-  { fetchMovie, init, clearMovie }
+  { fetchMovie, init, clearMovie, getCredits }
 )(MovieViewPage);
