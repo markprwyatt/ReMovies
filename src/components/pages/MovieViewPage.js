@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
+import * as Scroll from "react-scroll";
 import { fetchMovie, init, clearMovie, getCredits } from "../../actions/index";
+import Button from "../Button";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
@@ -63,6 +65,7 @@ const MovieViewPage = ({
     init();
     fetchMovie(match.params.id);
     getCredits(match.params.id);
+    Scroll.animateScroll.scrollToTop(500);
   }, [match.params.id]);
 
   if (config.base && movie.title) {
@@ -91,6 +94,7 @@ const MovieViewPage = ({
             <H3>{movie.tagline}</H3>
             <P>{movie.overview}</P>
           </div>
+          <Button text="Back" handleClick={() => history.goBack()} />
         </TitleWrapper>
       </MoviePageWrapper>
     );

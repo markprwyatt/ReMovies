@@ -36,11 +36,11 @@ body {
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
-  z-index: 1200;
+  z-index: 10000 !important;
   width: 36px;
   height: 30px;
-  left: 36px;
-  top: 36px;
+  left: 3rem;
+  top: 1.6rem;
 }
 
 /* Color/shape of burger icon bars */
@@ -79,4 +79,5 @@ body {
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+  z-index: 2000;
 }
