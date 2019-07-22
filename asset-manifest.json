@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ReMovies/static/css/main.ac3f2de7.chunk.css",
-    "main.js": "/ReMovies/static/js/main.0c9c5251.chunk.js",
-    "main.js.map": "/ReMovies/static/js/main.0c9c5251.chunk.js.map",
+    "main.js": "/ReMovies/static/js/main.87454d21.chunk.js",
+    "main.js.map": "/ReMovies/static/js/main.87454d21.chunk.js.map",
     "runtime~main.js": "/ReMovies/static/js/runtime~main.aa6090ca.js",
     "runtime~main.js.map": "/ReMovies/static/js/runtime~main.aa6090ca.js.map",
-    "static/js/2.92ad66b1.chunk.js": "/ReMovies/static/js/2.92ad66b1.chunk.js",
-    "static/js/2.92ad66b1.chunk.js.map": "/ReMovies/static/js/2.92ad66b1.chunk.js.map",
+    "static/js/2.5288f015.chunk.js": "/ReMovies/static/js/2.5288f015.chunk.js",
+    "static/js/2.5288f015.chunk.js.map": "/ReMovies/static/js/2.5288f015.chunk.js.map",
     "index.html": "/ReMovies/index.html",
-    "precache-manifest.61e6093124ac95fc6c93a32aa1bf8dfb.js": "/ReMovies/precache-manifest.61e6093124ac95fc6c93a32aa1bf8dfb.js",
+    "precache-manifest.a56d3e6439c545ab43a0c98eba8d0b3c.js": "/ReMovies/precache-manifest.a56d3e6439c545ab43a0c98eba8d0b3c.js",
     "service-worker.js": "/ReMovies/service-worker.js",
     "static/css/main.ac3f2de7.chunk.css.map": "/ReMovies/static/css/main.ac3f2de7.chunk.css.map"
   }
